@@ -18,8 +18,15 @@
   - [x] entry title
   - [x] entry description
   - [x] Describe your entr
-  
+
 `v2.0`
+- [ ] add WIP-Entry Functionality
+  -[ ] WIP entry directory create inside project diretory
+  -[ ] Add WIP resources 
+  -[ ] Create wip-entry.md alrady completed
+
+
+`v3.0`
 - [ ] pull project info from freelancer web page
 - [ ] Automatically genarate poject ID
 - [ ] pull client info
