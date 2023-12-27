@@ -36,17 +36,28 @@ def get_platform_and_type(url):
     else:
         platform = 'UNKOWN'
     if 'contest' in url:
-        type = 'Contest'
+        project_type = 'Contest'
     else:
-        type = 'Unkown'
-    return platform, type
+        project_type = 'Unkown'
+    return platform, project_type
+
+# Get Project Title
+
+
+def get_project_title(url, page):
+    folder_title = '_'.join(url.split('/')[4].split('-')[:-1])
+    md_title = page.title.text.split('|')[0]
+    return folder_title, md_title
 
 
 # Main Processing
 url = get_url()
 page = get_beautified_page(url)
-plaform = get_platform_and_type(url)[0]
-type = get_platform_and_type(url)[1]
 
-print(plaform)
-print(type)
+# Fetched Informations
+plaform = get_platform_and_type(url)[0]
+project_type = get_platform_and_type(url)[1]
+folder_title = get_project_title(url, page)[0]
+md_title = get_project_title(url, page)[1]
+
+print(plaform, project_type, folder_title, md_title)

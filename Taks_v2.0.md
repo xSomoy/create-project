@@ -14,7 +14,7 @@
 - [ ] **Data To Fetch:**
   - [x] Platforn Name
   - [x] Project Type
-  - [ ] Project Name
+  - [x] Project Name
   - [ ] Description
   - [ ] Submission File Type
   - [ ] Recommed Skills
