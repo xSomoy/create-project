@@ -6,7 +6,8 @@ import requests as rq
 from bs4 import BeautifulSoup as bs
 
 
-def get_url():      # Get url from user
+# Get url from user
+def get_url():
     # Argument Validation
     if len(sys.argv) < 2:   # IF true no argument has been provided
         # Ask manual input for url and assign to 'url'
@@ -21,13 +22,31 @@ def get_url():      # Get url from user
     return url
 
 
+# Download the page and beutify it
 def get_beautified_page(url):
     raw = rq.get(url)
     page = bs(raw.text, 'html.parser')
     return page
 
 
+# Get platform and project type from url
+def get_platform_and_type(url):
+    if 'freelancer' in url:
+        platform = 'Freelancer'
+    else:
+        platform = 'UNKOWN'
+    if 'contest' in url:
+        type = 'Contest'
+    else:
+        type = 'Unkown'
+    return platform, type
+
+
+# Main Processing
 url = get_url()
 page = get_beautified_page(url)
+plaform = get_platform_and_type(url)[0]
+type = get_platform_and_type(url)[1]
 
-print(page)
+print(plaform)
+print(type)

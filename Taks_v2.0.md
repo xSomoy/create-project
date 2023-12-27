@@ -12,8 +12,8 @@
 > Step 1
 
 - [ ] **Data To Fetch:**
-  - [ ] Platforn Name
-  - [ ] Project Type
+  - [x] Platforn Name
+  - [x] Project Type
   - [ ] Project Name
   - [ ] Description
   - [ ] Submission File Type
