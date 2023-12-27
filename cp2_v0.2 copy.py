@@ -74,6 +74,20 @@ def get_staus_price_entry(page):
     return status_price_entry
 
 
+# JSON file creator
+
+def make_json(url):
+    data = {
+        "url": url
+    }
+    # Serializing json
+    json_object = json.dumps(data, indent=4)
+
+    # Writing to sample.json
+    with open("data.json", "w") as outfile:
+        outfile.write(json_object)
+
+
 # Main Processing
 url = get_url()
 page = get_beautified_page(url)
@@ -89,6 +103,9 @@ status = get_staus_price_entry(page)[0]
 price = get_staus_price_entry(page)[1]
 entry = get_staus_price_entry(page)[2]
 
-print(plaform, project_type, folder_title,
-      md_title, skills, status, price, entry)
-print(description)
+
+make_json(url)
+
+# print(plaform, project_type, folder_title,
+#       md_title, skills, status, price, entry)
+# print(description)

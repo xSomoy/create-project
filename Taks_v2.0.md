@@ -24,3 +24,9 @@
   - [x] Status
   - [x] Price
   - [x] Entry Recived
+
+> Step 3
+
+- [ ] **Create a json file:**
+  - [ ] create a function to create a dictionary of all data
+  - [ ] export the data in a json file
