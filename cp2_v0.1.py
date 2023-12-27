@@ -41,13 +41,27 @@ def get_platform_and_type(url):
         project_type = 'Unkown'
     return platform, project_type
 
+
 # Get Project Title
-
-
 def get_project_title(url, page):
     folder_title = '_'.join(url.split('/')[4].split('-')[:-1])
     md_title = page.title.text.split('|')[0]
     return folder_title, md_title
+
+
+# Get project description
+def get_project_description(page):
+    description = page.p.text
+    return description
+
+
+# Get recommed skills
+def get_skills(page):
+    skills = []
+    temp_skills = page.find_all('ul')[3].find_all('a')
+    for i in temp_skills:
+        skills.append(i.text)
+    return skills
 
 
 # Main Processing
@@ -59,5 +73,7 @@ plaform = get_platform_and_type(url)[0]
 project_type = get_platform_and_type(url)[1]
 folder_title = get_project_title(url, page)[0]
 md_title = get_project_title(url, page)[1]
+description = get_project_description(page)
+skills = get_skills(page)
 
-print(plaform, project_type, folder_title, md_title)
+print(plaform, project_type, folder_title, md_title, skills)
