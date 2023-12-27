@@ -5,7 +5,7 @@
 `v1.0`
 
 > Step 0
-- [ ] Take project url as argument or as manual input
+- [x] Take project url as argument or as manual input
 - [ ] Download the project page
 - [ ] Beautufy the project page
 
