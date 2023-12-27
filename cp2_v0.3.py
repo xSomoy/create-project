@@ -76,9 +76,18 @@ def get_staus_price_entry(page):
 
 # JSON file creator
 
-def make_json(url):
+def make_json(url, plaform, project_type, folder_title, md_title, status, price, entry, skills, description):
     data = {
-        "url": url
+        'url': url,
+        'platform': plaform,
+        'type': project_type,
+        'title0': folder_title,
+        'title1': md_title,
+        'status': status,
+        'price':  price,
+        'entry': entry,
+        'skills': skills,
+        'description': description
     }
     # Serializing json
     json_object = json.dumps(data, indent=4)
@@ -97,14 +106,15 @@ plaform = get_platform_and_type(url)[0]
 project_type = get_platform_and_type(url)[1]
 folder_title = get_project_title(url, page)[0]
 md_title = get_project_title(url, page)[1]
-description = get_project_description(page)
-skills = get_skills(page)
 status = get_staus_price_entry(page)[0]
 price = get_staus_price_entry(page)[1]
 entry = get_staus_price_entry(page)[2]
+skills = get_skills(page)
+description = get_project_description(page)
 
 
-make_json(url)
+make_json(url, plaform, project_type, folder_title, md_title,
+          status, price, entry, skills, description)
 
 # print(plaform, project_type, folder_title,
 #       md_title, skills, status, price, entry)

@@ -27,6 +27,6 @@
 
 > Step 3
 
-- [ ] **Create a json file:**
-  - [ ] create a function to create a dictionary of all data
-  - [ ] export the data in a json file
+- [x] **Create a json file:**
+  - [x] create a function to create a dictionary of all data
+  - [x] export the data in a json file
