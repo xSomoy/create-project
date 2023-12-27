@@ -6,8 +6,8 @@
 
 > Step 0
 - [x] Take project url as argument or as manual input
-- [ ] Download the project page
-- [ ] Beautufy the project page
+- [x] Download the project page
+- [x] Beautufy the project page
 
 > Step 1
 

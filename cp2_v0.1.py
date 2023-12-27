@@ -2,8 +2,8 @@
 # Copyright © Mushphyqur Rahman Tanveer
 
 import sys
-import requests
-from bs4 import BeautifulSoup as soup
+import requests as rq
+from bs4 import BeautifulSoup as bs
 
 
 def get_url():      # Get url from user
@@ -21,4 +21,13 @@ def get_url():      # Get url from user
     return url
 
 
-print(get_url())
+def get_beautified_page(url):
+    raw = rq.get(url)
+    page = bs(raw.text, 'html.parser')
+    return page
+
+
+url = get_url()
+page = get_beautified_page(url)
+
+print(page)
