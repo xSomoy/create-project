@@ -8,7 +8,7 @@
 - [x] Take project url as argument or as manual input
 - [x] Download the project page
 - [x] Beautufy the project page
-  
+
 
 > Step 1
 
@@ -31,3 +31,10 @@
 - [x] **Create a json file:**
   - [x] create a function to create a dictionary of all data
   - [x] export the data in a json file
+
+> Step 4
+
+- [ ] **Read Data from a JSON File:**
+  - [ ] Read Data from a JSON File
+  - [ ] Unpack all data for markdown use
+  - [ ] write a demo markdown file
