@@ -20,7 +20,7 @@
 
 > Step 2
 
-- [ ] **More Data To Fetch:**
-  - [ ] Status
-  - [ ] Price
-  - [ ] Entry Recived
+- [x] **More Data To Fetch:**
+  - [x] Status
+  - [x] Price
+  - [x] Entry Recived
