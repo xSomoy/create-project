@@ -1,6 +1,6 @@
 # Project Creator
 
-## Task List
+## Task List: v1.0
 
 `v1.0`
 - [x] Create a folder with Project ID and Project Name
@@ -19,11 +19,13 @@
   - [x] entry description
   - [x] Describe your entr
 
+## Partially Projected v2 and v3 Tasks
+
 `v2.0`
 - [ ] add WIP-Entry Functionality
-  -[ ] WIP entry directory create inside project diretory
-  -[ ] Add WIP resources 
-  -[ ] Create wip-entry.md alrady completed
+  - [ ] WIP entry directory create inside project diretory
+  - [ ] Add WIP resources
+  - [ ] Create wip-entry.md alrady completed
 
 
 `v3.0`
