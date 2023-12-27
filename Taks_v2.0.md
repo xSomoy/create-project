@@ -34,7 +34,7 @@
 
 > Step 4
 
-- [ ] **Read Data from a JSON File:**
-  - [ ] Read Data from a JSON File
-  - [ ] Unpack all data for markdown use
-  - [ ] write a demo markdown file
+- [x] **Read Data from a JSON File:**
+  - [x] Read Data from a JSON File
+  - [x] Unpack all data for markdown use
+  - [x] write a demo markdown file
