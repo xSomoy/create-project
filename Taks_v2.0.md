@@ -17,3 +17,10 @@
   - [x] Project Name
   - [x] Description
   - [x] Recommed Skills
+
+> Step 2
+
+- [ ] **More Data To Fetch:**
+  - [ ] Status
+  - [ ] Price
+  - [ ] Entry Recived
