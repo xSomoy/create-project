@@ -92,7 +92,8 @@ def get_staus_price_entry(page):
     temp = page.find_all('ul')[2].find_all('li')
     for i in temp:
         status_price_entry.append(i.text.strip().split(':')[1].lstrip())
-    print('Process(7/69): Project Status, Price and Total Enties Collected!')
+    print(
+        f'Process(5/{tp}): Project Status, Price and Total Enties Collected!')
     return status_price_entry
 
 
@@ -116,7 +117,7 @@ def project_id_creator(no, platform, project_type):
             project_type = project_type
     date = dt.now().date()
     ID = platform + str(year) + str(month) + project_type + no
-    print('Process(8/69): Project ID Generated!')
+    print(f'Process(8/{tp}): Project ID Generated!')
     return ID, str(date)
 
 # JSON file creator
@@ -140,11 +141,11 @@ def make_json(date, no, ID, url, platform, project_type, directory_title, md_tit
     }
     # Serializing json
     json_object = json.dumps(data, indent=4)
-    print('Process(8/69): JSON Object Created!')
+    print(f'Process(15/{tp}): JSON Object Created!')
     # Writing to sample.json
     with open(f'{ID}.json', 'w') as outfile:
         outfile.write(json_object)
-    print('Process(10/69): Project JSON Data Stored!')
+    print(f'Process(16/{tp}): Project JSON Data Stored!')
 
 
 # Processing Informations
@@ -180,9 +181,9 @@ skills = skills_format(skills)
 
 project_directory = f'{ID}-{directory_title}'
 os.mkdir(project_directory)
-print('Process(11/69): Project Directory Created!')
+print(f'Process(9/{tp}): Project Directory Created!')
 os.chdir(project_directory)
-print('Process(12/69): Changing Working Directory to Project Directory!')
+print(f'Process(10/{tp}): Changing Working Directory to Project Directory!')
 
 
 # Generating Project-info.md
@@ -213,14 +214,14 @@ project_info_md = f'''
 
 > TYPE, TYPE 
 '''
-print('Process(13/69): Project_Info.md Generated!')
+print(f'Process(11/{tp}): Project_Info.md Generated!')
 
 # writing Project.md File
 file_path = 'Project_Info.md'
 with open(file_path, 'w') as file:
     file.write(project_info_md)
 
-print('Process(14/69): Project_Info.md Created!')
+print(f'Process(12/{tp}): Project_Info.md Created!')
 
 # Generating Entry_Info Markdown Created
 entry_info_md = f'''
@@ -234,17 +235,24 @@ ENTRY DESCRIPTION
 '''
 
 # Craeting the Entry-Info Markdown file
-print('Process(15/69): Entry_Info.md Generated!')
+print(f'Process(13/{tp}): Entry_Info.md Generated!')
 file_path = 'Entry_Info.md'
 with open(file_path, 'w') as file:
     file.write(entry_info_md)
-print('Process(16/69): Entry_Info.md Created!')
+print(f'Process(14/{tp}): Entry_Info.md Created!')
 
 # END
 
-# ----------------------------- JSON FILE GENERATOR ------------------
+# ----------------------------- CREATING JSON FILE ------------------
 
 make_json(date, no, ID, url, platform, project_type, directory_title, md_title,
           status, price, entry, skills, description)
 
-print('PROJECT ENVIROMENT IS READY!!!!')
+
+# ---------------------- DISPLAYING ALL INFORMATIONS ------------------
+print('\n--------------------------------------------------------\n')
+print(f'Project No. {no}\nID: {ID}\nProject Name: {md_title}\nProject Directory: {project_directory}\nInfo: {project_directory}/Project_info.md\nProject Data: {project_directory}/{ID}.json\nEntry Template:{project_directory}/Entry_Info.md\nProject URL: {url}\nPlatform: {platform}\nProject Type: {project_type}\nStatus: {status}\nPrice: {price}')
+print('\nPROJECT ENVIROMENT IS READY!!!!')
+
+
+######################## -------- DONE ----------##########################
