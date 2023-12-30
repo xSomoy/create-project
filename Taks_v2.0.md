@@ -38,3 +38,10 @@
   - [x] Read Data from a JSON File
   - [x] Unpack all data for markdown use
   - [x] write a demo markdown file
+
+> Step 5
+
+- [ ] **User Input and More**
+  - [ ] Get Project No. 
+  - [ ] Generate Project ID
+  - [ ] Add above information to JSON
