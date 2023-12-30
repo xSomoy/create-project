@@ -5,7 +5,7 @@ import sys
 import json
 import requests as rq
 from bs4 import BeautifulSoup as bs
-
+from datetime import datetime as dt
 # Get url and ID from user
 
 
@@ -85,13 +85,36 @@ def get_staus_price_entry(page):
     return status_price_entry
 
 
+# Project ID creator EX. FR2312C01
+def project_id_creator(no, platform, project_type):
+    year = dt.now().year % 1000
+    month = dt.now().month
+    match platform:
+        case 'Freelancer':
+            platform = 'FR'
+        case 'Fiverr':
+            platform = 'FI'
+        case _:
+            platform = platform
+    match project_type:
+        case 'Contest':
+            project_type = 'C'
+        case 'Project':
+            project_type = 'P'
+        case _:
+            project_type = project_type
+    ID = platform + str(year) + str(month) + project_type + no
+    return ID
+
 # JSON file creator
 
-def make_json(no, url, plaform, project_type, folder_title, md_title, status, price, entry, skills, description):
+
+def make_json(no, ID, url, platform, project_type, folder_title, md_title, status, price, entry, skills, description):
     data = {
         'no': no,
+        'id' : ID,
         'url': url,
-        'platform': plaform,
+        'platform': platform,
         'type': project_type,
         'title0': folder_title,
         'title1': md_title,
@@ -105,7 +128,7 @@ def make_json(no, url, plaform, project_type, folder_title, md_title, status, pr
     json_object = json.dumps(data, indent=4)
 
     # Writing to sample.json
-    with open("data.json", "w") as outfile:
+    with open(f'{ID}.json', 'w') as outfile:
         outfile.write(json_object)
 
 
@@ -114,12 +137,13 @@ no, url = get_url_no()
 page = get_beautified_page(url)
 
 # Fetched Informations
-plaform, project_type = get_platform_and_type(url)
+platform, project_type = get_platform_and_type(url)
 folder_title, md_title = get_project_title(url, page)
 status, price, entry = get_staus_price_entry(page)
 skills = get_skills(page)
 description = get_project_description(page)
+ID = project_id_creator(no, platform, project_type)
 
-
-make_json(no, url, plaform, project_type, folder_title, md_title,
+make_json(no, ID, url, platform, project_type, folder_title, md_title,
           status, price, entry, skills, description)
+
