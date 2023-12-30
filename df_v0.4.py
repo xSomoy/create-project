@@ -121,9 +121,3 @@ description = get_project_description(page)
 
 make_json(no, url, plaform, project_type, folder_title, md_title,
           status, price, entry, skills, description)
-
-# print(plaform, project_type, folder_title,
-#       md_title, skills, status, price, entry)
-# print(description)
-# print(url, no)
-# print(sys.argv[0])
