@@ -42,6 +42,6 @@
 > Step 5
 
 - [ ] **User Input and More**
-  - [ ] Get Project No. 
+  - [x] Get Project No. 
   - [ ] Generate Project ID
   - [ ] Add above information to JSON
