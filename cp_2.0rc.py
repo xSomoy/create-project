@@ -7,6 +7,9 @@ import json
 import requests as rq
 from bs4 import BeautifulSoup as bs
 from datetime import datetime as dt
+
+tp = 16  # Total Processes
+
 # Get url and ID from user
 
 
@@ -39,7 +42,7 @@ def get_url_no():
 def get_beautified_page(url):
     raw = rq.get(url)
     page = bs(raw.text, 'html.parser')
-    print('Process(1/69): Project Page Downloaded!')
+    print(f'Process(1/{tp}): Project Page Downloaded!')
     return page
 
 
@@ -49,12 +52,12 @@ def get_platform_and_type(url):
         platform = 'Freelancer'
     else:
         platform = 'UNKOWN'
-    print('Process(2/69): Platform Detected!')
+    print(f'Process(2/{tp}): Platform Detected!')
     if 'contest' in url:
         project_type = 'Contest'
     else:
         project_type = 'Unkown'
-    print('Process(3/69): Project Type Detected!')
+    print(f'Process(3/{tp}): Project Type Detected!')
     return platform, project_type
 
 
@@ -62,14 +65,14 @@ def get_platform_and_type(url):
 def get_project_title(url, page):
     directory_title = '_'.join(url.split('/')[4].split('-')[:-1])
     md_title = page.title.text.split('|')[0]
-    print('Process(4/69): Project Title Generated!')
+    print(f'Process(4/{tp}): Project Title Generated!')
     return directory_title, md_title
 
 
 # Get project description
 def get_project_description(page):
     description = page.p.text
-    print('Process(5/69): Project Description Extracted!')
+    print(f'Process(7/{tp}): Project Description Extracted!')
     return description
 
 
@@ -79,7 +82,7 @@ def get_skills(page):
     temp_skills = page.find_all('ul')[3].find_all('a')
     for i in temp_skills:
         skills.append(i.text)
-    print('Process(6/69): Project Required Skills Collected!')
+    print(f'Process(6/{tp}): Project Required Skills Collected!')
     return skills
 
 
