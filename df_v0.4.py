@@ -6,8 +6,9 @@ import json
 import requests as rq
 from bs4 import BeautifulSoup as bs
 
-
 # Get url and ID from user
+
+
 def get_url_no():
     # Argument Validation
     if len(sys.argv) < 2:   # IF true no argument has been provided
@@ -84,8 +85,9 @@ def get_staus_price_entry(page):
 
 # JSON file creator
 
-def make_json(url, plaform, project_type, folder_title, md_title, status, price, entry, skills, description):
+def make_json(no, url, plaform, project_type, folder_title, md_title, status, price, entry, skills, description):
     data = {
+        'no': no,
         'url': url,
         'platform': plaform,
         'type': project_type,
@@ -110,22 +112,18 @@ no, url = get_url_no()
 page = get_beautified_page(url)
 
 # Fetched Informations
-plaform = get_platform_and_type(url)[0]
-project_type = get_platform_and_type(url)[1]
-folder_title = get_project_title(url, page)[0]
-md_title = get_project_title(url, page)[1]
-status = get_staus_price_entry(page)[0]
-price = get_staus_price_entry(page)[1]
-entry = get_staus_price_entry(page)[2]
+plaform, project_type = get_platform_and_type(url)
+folder_title, md_title = get_project_title(url, page)
+status, price, entry = get_staus_price_entry(page)
 skills = get_skills(page)
 description = get_project_description(page)
 
 
-make_json(url, plaform, project_type, folder_title, md_title,
+make_json(no, url, plaform, project_type, folder_title, md_title,
           status, price, entry, skills, description)
 
 # print(plaform, project_type, folder_title,
 #       md_title, skills, status, price, entry)
 # print(description)
-print(url, no)
-print(sys.argv[0])
+# print(url, no)
+# print(sys.argv[0])
