@@ -81,7 +81,7 @@ def get_staus_price_entry(page):
     status_price_entry = []
     temp = page.find_all('ul')[2].find_all('li')
     for i in temp:
-        status_price_entry.append(i.text.strip().split(':')[1])
+        status_price_entry.append(i.text.strip().split(':')[1].lstrip())
     return status_price_entry
 
 
