@@ -23,7 +23,7 @@ skills = skills_format(data['skills'])
 
 markdown_content = f'''
 # [{data['title1']}]({data['url']})
-## Project ID: {data['platform']}
+## Project ID: {data['id']}
 > Price : **{data['price'].lstrip()}**
 
 > Status : {data['status']}
