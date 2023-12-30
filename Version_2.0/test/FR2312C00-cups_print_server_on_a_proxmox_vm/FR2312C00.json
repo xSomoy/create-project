@@ -1,0 +1,15 @@
+{
+    "date": "2023-12-31",
+    "no": "00",
+    "id": "FR2312C00",
+    "url": "https://www.freelancer.com/contest/cups-print-server-on-a-proxmox-vm-2352304",
+    "platform": "Freelancer",
+    "type": "Contest",
+    "title0": "cups_print_server_on_a_proxmox_vm",
+    "title1": "CUPS print server on a proxmox VM ",
+    "status": "Open",
+    "price": "$70",
+    "entry": "4",
+    "skills": "**Linux** | **Network Administration** | **PHP** | **System Admin** | **UNIX** ",
+    "description": "basically, I need a print server for print mirroring. Right now we have a single printer that gets the works. I need that the work is duplicated and sent to 2 different network printers. The idea was to set up a VM running a linux distro in our proxmox server, then CUPS, then sending the works to that VM. please no placeholder offers or stupid offers. Please write \"i am here\" to prove you read fully the assignment."
+}
