@@ -45,3 +45,17 @@
   - [x] Get Project No. 
   - [X] Generate Project ID
   - [x] Add above information to JSON
+
+> Step 6
+
+- [x] **Create Project Directory and Generate Files**
+  - [x] Create Project Directory
+  - [X] Generate Project Info Markdown File
+  - [X] Generate Entry Info Markdown File
+  - [x] Generate Project JSON Data File  
+
+> Step 7
+
+- [ ] **Progress Report**
+  - [ ] Display All information 
+  - [ ] Print Every step of the process when they are finished
