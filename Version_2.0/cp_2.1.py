@@ -42,6 +42,9 @@ def get_url_no():
 def get_beautified_page(url):
     raw = rq.get(url)
     page = bs(raw.text, 'html.parser')
+    if 'Login' in page.title.text:
+        print('PRIVATE CONTEST DETECTED!!\nProcress Terminated!')
+        exit()
     print(f'Process(1/{tp}): Project Page Downloaded!')
     return page
 
