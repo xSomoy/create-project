@@ -1,4 +1,4 @@
-# Version 2.1
+# Version 2.2
 # Copyright © Mushphyqur Rahman Tanveer
 
 import os
@@ -119,7 +119,7 @@ def project_id_creator(no, platform, project_type):
         case _:
             project_type = project_type
     date = dt.now().date()
-    ID = platform + str(year) + str(month) + project_type + no
+    ID = platform + str(year) + str(month).zfill(2) + project_type + no
     print(f'Process(8/{tp}): Project ID Generated!')
     return ID, str(date)
 
